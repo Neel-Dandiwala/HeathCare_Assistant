@@ -6,6 +6,7 @@ import SimliHeaderLogo from "./Components/Logo";
 import Navbar from "./Components/Navbar";
 import Image from "next/image";
 import GitHubLogo from "@/media/github-mark-white.svg";
+import HealthAssistant from "./HealthAssistant";
 
 interface avatarSettings {
   vapi_agentid: string;
@@ -14,8 +15,8 @@ interface avatarSettings {
 
 // Customize your avatar here
 const avatar: avatarSettings = {
-  vapi_agentid: "VAPI_AGENT_ID",
-  simli_faceid: "5514e24d-6086-46a3-ace4-6a7264e5cb7c",
+  vapi_agentid: "2e4f7d2d-41db-4b34-8aab-6adae810ba06",
+  simli_faceid: "0c2b8b04-5274-41f1-a21c-d5c98322efa9",
 };
 
 const Demo: React.FC = () => {
@@ -32,57 +33,16 @@ const Demo: React.FC = () => {
   };
 
   return (
-    <div className="bg-black min-h-screen flex flex-col items-center font-abc-repro font-normal text-sm text-white p-8">
-      <SimliHeaderLogo />
-      <Navbar />
-
-      <div className="absolute top-[32px] right-[32px]">
-        <text
-          onClick={() => {
-            window.open("https://github.com/simliai/create-simli-app-vapi");
-          }}
-          className="font-bold cursor-pointer mb-8 text-xl leading-8"
-        >
-          <Image className="w-[20px] inline mr-2" src={GitHubLogo} alt="" />
-          create-simli-app (Vapi)
-        </text>
-      </div>
-      <div className="flex flex-col items-center gap-6 bg-effect15White p-6 pb-[40px] rounded-xl w-full">
-        <div>
-          {showDottedFace && <DottedFace />}
-          <SimliVapi
-            agentId={avatar.vapi_agentid}
+    <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 min-h-screen items-center font-abc-repro font-normal text-sm text-white">
+      <div>
+        <div className="w-full h-full">
+          
+          <HealthAssistant
+            vapi_agentid={avatar.vapi_agentid}
             simli_faceid={avatar.simli_faceid}
-            onStart={onStart}
-            onClose={onClose}
-            showDottedFace={showDottedFace}
+           
           />
         </div>
-      </div>
-
-      <div className="max-w-[350px] font-thin flex flex-col items-center ">
-        <span className="font-bold mb-[8px] leading-5 ">
-          {" "}
-          Create Simli App is a starter repo for creating visual avatars with
-          Simli{" "}
-        </span>
-        <ul className="list-decimal list-inside max-w-[350px] ml-[6px] mt-2">
-          <li className="mb-1">
-            Fill in your Vapi and Simli API keys in .env file.
-          </li>
-          <li className="mb-1">
-            Test out the interaction and have a talk with the Vapi-powered,
-            Simli-visualized avatar.
-          </li>
-          <li className="mb-1">
-            You can replace the avatar's face and agent with your own. Do this
-            by editing <code>app/page.tsx</code>.
-          </li>
-        </ul>
-        <span className=" mt-[16px]">
-          You can now deploy this app to Vercel, or incorporate it as part of
-          your existing project.
-        </span>
       </div>
     </div>
   );

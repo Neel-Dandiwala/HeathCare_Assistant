@@ -4,6 +4,7 @@ import { SimliClient } from "simli-client";
 import VideoBox from "./Components/VideoBox";
 import cn from "./utils/TailwindMergeAndClsx";
 import IconSparkleLoader from "@/media/IconSparkleLoader";
+import { generateVapiPrompt, patientHealthKMS } from "./utils/health_kms";
 
 interface SimliVapiProps {
   simli_faceid: string;
@@ -78,6 +79,7 @@ const SimliVapi: React.FC<SimliVapiProps> = ({
    */
   const initializeSimliClient = useCallback(() => {
     if (videoRef.current && audioRef.current) {
+      //console.log(process.env.NEXT_PUBLIC_SIMLI_API_KEY)
       const SimliConfig = {
         apiKey: process.env.NEXT_PUBLIC_SIMLI_API_KEY,
         faceID: simli_faceid,
@@ -96,6 +98,7 @@ const SimliVapi: React.FC<SimliVapiProps> = ({
    */
   const startVapiInteraction = async () => {
     try {
+      const prompt = generateVapiPrompt(patientHealthKMS);
       await vapi.start(agentId);
       console.log("Vapi interaction started");
       eventListenerVapi();
