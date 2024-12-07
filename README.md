@@ -2,6 +2,9 @@
 
 ![HealthCompanion Interface](./screenshot.png)
 
+## Cause
+A submission for the Voice & Video AI Agents Hackathon - Built in just 2-3 hours
+ 
 ## Project Overview
 Inspired by a personal loss and the challenges of providing constant care for elderly loved ones, HealthCompanion transforms elderly care through intelligent monitoring and companionship. This project was born from my experience with my grandmother, where the need for round-the-clock attention highlighted the gap in elderly care solutions.
 
