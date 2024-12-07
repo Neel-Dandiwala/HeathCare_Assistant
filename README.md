@@ -1,35 +1,50 @@
-# Create Simli App (Vapi)
-This starter is an example of how to create a composable Simli interaction that runs in a Next.js app.
+# HealthCompanion: AI-Powered Elderly Care Assistant
 
- ## Usage
- 1. Rename .env_sample to .env and paste your API keys: [SIMLI-API-KEY](https://www.simli.com/profile) and [VAPI-API-KEY](https://dashboard.vapi.ai/org/api-keys) <br/> If you want to try Simli but don't have API access to these third parties, ask in Discord and we can help you out with that ([Discord Link](https://discord.gg/yQx49zNF4d)). 
-```js
-NEXT_PUBLIC_SIMLI_API_KEY="SIMLI-API-KEY"
-NEXT_PUBLIC_VAPI_API_KEY="VAPI-API-KEY"
-``` 
+![HealthCompanion Interface](./screenshot.png)
 
-2. Insall packages
+## Project Overview
+Inspired by a personal loss and the challenges of providing constant care for elderly loved ones, HealthCompanion transforms elderly care through intelligent monitoring and companionship. This project was born from my experience with my grandmother, where the need for round-the-clock attention highlighted the gap in elderly care solutions.
+
+## Demo Video
+[![HealthCompanion Demo](https://youtu.be/ShlU03shi40)](https://youtu.be/ShlU03shi40)
+
+## Technical Implementation
+* **Simli AI** - Creating a lifelike, empathetic visual avatar
+* **Vapi** - Natural voice interactions and health knowledge processing
+* **Unified** - Storing and managing medical documentation
+* **Tech Stack** - Next.js, React, and Tailwind CSS for a modern, responsive interface
+
+## Key Features
+* 24/7 virtual health companion with real-time vitals monitoring
+* Medication scheduling and reminders
+* Emergency contact system
+* Daily activity tracking
+* Medical appointment management
+* Natural conversation with contextual health awareness
+
+## What Makes It Special
+
+### 1. Personalized Care
+The system maintains a comprehensive knowledge of each patient's medical history, medications, and preferences
+
+### 2. Proactive Monitoring
+Alerts caregivers about concerning changes in vital signs or missed medications
+
+### 3. Companionship
+Reduces loneliness while maintaining health oversight
+
+### 4. Peace of Mind
+Allows family members to monitor their loved ones remotely while ensuring immediate response to emergencies
+
+## Impact
+This isn't just another health monitoring system – it's a compassionate companion that helps preserve both the independence of elderly individuals and the peace of mind of their families. By combining cutting-edge AI technology with practical healthcare needs, we're addressing a critical gap in elderly care that affects millions of families worldwide.
+
+## Get Started
 ```bash
 npm install
-```
-
-3. Run
-```bash
 npm run dev
 ```
 
-4. Customize your avatar's face and prompt by editing app/page.tsx. [Create your Vapi agent](https://dashboard.vapi.ai/assistants)
-```js
-const avatar = {
-  vapi_agentid: "VAPI-AGENT-ID",
-  simli_faceid: "5514e24d-6086-46a3-ace4-6a7264e5cb7c",
-};
-```
+## License
+MIT
 
-## Characters
-You can swap out the character by finding one that you like in the [docs](https://docs.simli.com/introduction), or [create your own](https://app.simli.com/) 
-
-![alt text](media/image.png) ![alt text](media/image-4.png) ![alt text](media/image-2.png) ![alt text](media/image-3.png) ![alt text](media/image-5.png) ![alt text](media/image-6.png)
-
-## Deploy on Vercel
-An easy way to deploy your avatar interaction to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme). 
