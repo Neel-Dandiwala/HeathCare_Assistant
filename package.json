@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@unified-api/typescript-sdk": "^2.9.8",
     "@vapi-ai/web": "^2.1.7",
     "axios": "^1.7.5",
     "clsx": "^2.1.1",

@@ -5,6 +5,7 @@ import VideoBox from "./Components/VideoBox";
 import cn from "./utils/TailwindMergeAndClsx";
 import IconSparkleLoader from "@/media/IconSparkleLoader";
 import { generateVapiPrompt, patientHealthKMS } from "./utils/health_kms";
+import { UnifiedService } from "./UnifiedService";
 
 interface SimliVapiProps {
   simli_faceid: string;
@@ -44,6 +45,10 @@ const SimliVapi: React.FC<SimliVapiProps> = ({
 
     try {
       initializeSimliClient();
+
+      // Initialize Unified service
+      const unifiedService = initializeUnifiedService();
+      console.log(unifiedService)
 
       // Request microphone access
       await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -92,6 +97,15 @@ const SimliVapi: React.FC<SimliVapiProps> = ({
       console.log("Simli Client initialized");
     }
   }, [simli_faceid]);
+
+  
+  const initializeUnifiedService = useCallback(() => {
+    const apiKey = process.env.NEXT_PUBLIC_UNIFIED_API_KEY;
+    if (!apiKey) {
+      throw new Error("Unified API key is not configured");
+    }
+    return new UnifiedService(apiKey);
+  }, []);
 
   /**
    * Start Vapi interaction
